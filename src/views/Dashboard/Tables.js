@@ -34,8 +34,22 @@ import { tablesProjectData, tablesTableData } from "variables/general";
 
 // Icons
 import { AiFillCheckCircle } from "react-icons/ai";
+import axios from "axios";
 
 function Tables() {
+  let userData = JSON.parse(localStorage.getItem("userData"));
+  console.log("userData",userData);
+  const handleBuyNowClick = (amount) => {
+    const data = {
+      "email": userData?.user,
+      "amount": amount
+  }
+    axios.post("https://mysipmlm-192dbd53289e.herokuapp.com/api/v1/main/add-funds/",data).then((res) => {
+      console.log("ressss", res);
+    })
+
+  }
+
   return (
     <Flex direction='column' pt={{ base: "120px", md: "75px" }}>
       {/* Authors Table */}
@@ -239,7 +253,7 @@ function Tables() {
         
 
         <div className="d-flex justify-content-center">
-        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link>Buy Now</Link>  </div>
+        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link onClick={() => handleBuyNowClick("1000")}>Buy Now</Link>  </div>
         </div>
 
       </div>
@@ -261,7 +275,7 @@ function Tables() {
         
 
                 <div className="d-flex justify-content-center">
-        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link>Buy Now</Link>  </div>
+        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link onClick={() => handleBuyNowClick("2000")}>Buy Now</Link>  </div>
         </div>
 
       </div>
@@ -283,7 +297,7 @@ function Tables() {
         
 
                 <div className="d-flex justify-content-center">
-        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link>Buy Now</Link>  </div>
+        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link onClick={() => handleBuyNowClick("3000")}>Buy Now</Link>  </div>
         </div>
 
       </div>
@@ -305,7 +319,7 @@ function Tables() {
         
 
                 <div className="d-flex justify-content-center">
-        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link>Buy Now</Link>  </div>
+        <div style={{width: 200, height: 54, background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 4, display:'flex',alignItems:'center', justifyContent:'center', fontSize:'23px', fontFamily:'poppins',marginTop:'45px', fontWeight:'700'}} > <Link onClick={() => handleBuyNowClick("5000")}>Buy Now</Link>  </div>
         </div>
 
       </div>

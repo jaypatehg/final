@@ -16,6 +16,8 @@ import {
   RocketIcon,
   SupportIcon,
 } from "components/Icons/Icons";
+import Terms from "views/Dashboard/terms";
+import Privacy from "views/Dashboard/Privacy";
 
 var dashRoutes = [
   {
@@ -40,6 +42,22 @@ var dashRoutes = [
     rtlName: "لوحة القيادة",
     icon: <CreditIcon color='inherit' />,
     component: Billing,
+    layout: "/admin",
+  },
+  {
+    path: "/terms",
+    name: "Terms & Condition",
+    rtlName: "لوحة القيادة",
+    icon: <CreditIcon color='inherit' />,
+    component: Terms,
+    layout: "/admin",
+  },
+  {
+    path: "/privacy",
+    name: "Privacy policy",
+    rtlName: "لوحة القيادة",
+    icon: <CreditIcon color='inherit' />,
+    component: Privacy,
     layout: "/admin",
   },
   // {

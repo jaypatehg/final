@@ -59,6 +59,7 @@ import {
 } from 'variables/charts';
 import { dashboardTableData, timelineData } from 'variables/general';
 import { replace } from 'stylis';
+import axios from 'axios';
 
 export default function Dashboard() {
 
@@ -70,13 +71,19 @@ export default function Dashboard() {
 		if(!userData){
 			history.replace("/auth/SignIn");
 		  }
-		const res = await  fetch (
-			" https://mysipmlm-192dbd53289e.herokuapp.com/api/v1/main/user-dashbord/",
-			{
-			  method: "GET",
-			// body:JSON.stringify({email})
-			});
+		// const res = await  fetch (
+		// 	" https://mysipmlm-192dbd53289e.herokuapp.com/api/v1/main/user-dashbord/",
+		// 	{
+		// 	  method: "GET",
+		// 	// body:JSON.stringify({email})
+		// 	});
+		const data = {
+			email: "swainjit8@gmail.com"
+		}
+		axios.get('https://mysipmlm-192dbd53289e.herokuapp.com/api/v1/main/user-dashbord/', data).then(res => {
+
 			console.log("Data Responce",res);
+		})
 	},[])
 
 	return (
